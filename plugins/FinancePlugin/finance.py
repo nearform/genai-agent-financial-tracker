@@ -13,6 +13,9 @@ class FinancePlugin:
     def financial_info(
         self,
         TICKER_AND_PERIOD):
+        if not TICKER_AND_PERIOD:
+            print(TICKER_AND_PERIOD)
+            raise Exception("No ticker value provided")
         args = json.loads(TICKER_AND_PERIOD)
         ticker_name =  args["ticker_name"]
         period =  args["period"]
