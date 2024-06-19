@@ -12,6 +12,7 @@ Generate a new complete Python file that performs the following tasks:
     * Appropriate labels, and legend
     * the title should be the word TITLE in capitals
     * there should be a subplot displaying the drawdown data over time in red 
+    * there should be an empty space between the plot and subplot
 
 4. Display Plot
 
