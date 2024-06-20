@@ -33,10 +33,7 @@ class FinancePlugin:
 
         data = pd.read_csv(StringIO(data_csv))
         data['Peak'] = data['Close'].cummax()
-
-        data['Difference'] = data['Peak'] - data['Close']
-        data['Drawdown'] = data['Difference'] / data['Peak']
-        data["Difference"] = data["Difference"].round(4)
+        data['Drawdown'] = data['Close'] - data['Peak']
         data["Drawdown"] = data["Drawdown"].round(4)
         data = data.drop(columns=["Peak"])
         return str(data.to_json(orient='split'))

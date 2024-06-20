@@ -2,7 +2,7 @@ Generate a new complete Python file that performs the following tasks:
 
 0. Ensure the code includes `import json` and `from io import StringIO` at the top.
 
-1. Create an empty DataFrame with the columns 'Date', 'Close', 'Difference', and 'Drawdown'.
+1. Create an empty DataFrame with the columns 'Date', 'Close' and 'Drawdown'.
 
 2. Do not populate the DataFrame and do not include SAMPLE DATA for the plots but include a comment stating 'df=TEMP_DATA'.
 

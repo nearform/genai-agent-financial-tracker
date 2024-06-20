@@ -52,7 +52,7 @@ async  def get_planner(planner,user_input:str):
         arguments = KernelArguments(settings=execution_settings)
         arguments["user_input"]= user_input
         goal = f'Based on the user_input argument,chat with the AI to get the ticker_name and period if available, extract the data for a ticker over time, create a drawdown, plot the chart, refactor the code to include the drawdow data.'
-        plan = planner = await planner.create_plan(goal = goal)
+        plan = await planner.create_plan(goal = goal)
         result = await plan.invoke(kernel=kernel, arguments=arguments)
 
         exec(str(result))
