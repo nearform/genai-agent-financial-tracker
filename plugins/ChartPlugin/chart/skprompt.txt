@@ -13,8 +13,8 @@ Generate a new complete Python file that performs the following tasks:
     * X-axis showing dates with intelligent labeling (e.g., only show year for multi-year data, month for multi-month data).
     * Appropriate labels, and legend
     * the title should be the word TITLE in capitals
-    * there should be a subplot displaying the drawdown data over time in red 
-    * there should be a gap between the graph for the plot and subplot
+    * there should be a separate subplot displaying the drawdown data over time in red 
+    * there should be a gap between the chart for the plot and subplot
 
 5. Display Plot
 

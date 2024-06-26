@@ -18,6 +18,7 @@ class CodeRefactor:
         code:Annotated[str, "The code to be refactored"],
         data:Annotated[str, "The pandas dataFrame to be included in the code"],
         TICKER_AND_PERIOD: Annotated[str, "The ticker name and period provided on the initial input"]):
+        print(code)
         args = json.loads(TICKER_AND_PERIOD)
         ticker_name =  args["ticker_name"]
         period =  args["period"] if args["period"] is not None else "1y"
