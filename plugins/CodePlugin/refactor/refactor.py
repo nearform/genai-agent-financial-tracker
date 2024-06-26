@@ -18,7 +18,6 @@ class CodeRefactor:
         code:Annotated[str, "The code to be refactored"],
         data:Annotated[str, "The pandas dataFrame to be included in the code"],
         TICKER_AND_PERIOD: Annotated[str, "The ticker name and period provided on the initial input"]):
-        
         args = json.loads(TICKER_AND_PERIOD)
         ticker_name =  args["ticker_name"]
         period =  args["period"] if args["period"] is not None else "1y"
@@ -27,6 +26,5 @@ class CodeRefactor:
         code = code.strip('```')
         code = code.replace('# df=TEMP_DATA', f'df = pd.read_json(StringIO(\'{data}\'), orient="split")')
         code = code.replace('TITLE',f'{ticker_name} stock over the period of {period}')
-
         return code
 

@@ -14,7 +14,6 @@ class FinancePlugin:
         self,
         TICKER_AND_PERIOD):
         if not TICKER_AND_PERIOD:
-            print(TICKER_AND_PERIOD)
             raise Exception("No ticker value provided")
         args = json.loads(TICKER_AND_PERIOD)
         ticker_name =  args["ticker_name"]
@@ -26,12 +25,12 @@ class FinancePlugin:
             data = data.drop(columns=["Open","High","Low","Volume", "Dividends", "Stock Splits"])
             data.index = data.index.strftime('%Y-%m-%d')
             data["Close"] = data["Close"].round(4)
-            return data.to_csv()
+            return data.to_json()
 
     @kernel_function(name="drawdown", description="Calculate the drawdown values for the stock")
-    def drawdown(self, data_csv: Annotated[str, "the data from the stock"]):
+    def drawdown(self, data_json: Annotated[str, "the data from the stock"]):
 
-        data = pd.read_csv(StringIO(data_csv))
+        data =  pd.read_json(StringIO(data_json))
         data['Peak'] = data['Close'].cummax()
         data['Drawdown'] = data['Close'] - data['Peak']
         data["Drawdown"] = data["Drawdown"].round(4)

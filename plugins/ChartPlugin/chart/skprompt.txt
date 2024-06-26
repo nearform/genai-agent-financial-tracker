@@ -6,13 +6,15 @@ Generate a new complete Python file that performs the following tasks:
 
 2. Do not populate the DataFrame and do not include SAMPLE DATA for the plots but include a comment stating 'df=TEMP_DATA'.
 
-3. Use matplotlib to create a plot with:
+3. Convert the dataFrame index to a 'Date' column
+
+4. Use matplotlib to create a plot with:
     * Display the closing value across the time period .
     * X-axis showing dates with intelligent labeling (e.g., only show year for multi-year data, month for multi-month data).
     * Appropriate labels, and legend
     * the title should be the word TITLE in capitals
     * there should be a subplot displaying the drawdown data over time in red 
-    * there should be an empty space between the plot and subplot
+    * there should be a gap between the graph for the plot and subplot
 
-4. Display Plot
+5. Display Plot
 

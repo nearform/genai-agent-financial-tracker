@@ -1,21 +1,21 @@
 # Copyright (c) Microsoft. All rights reserved.
-
+import os
 import asyncio
 from semantic_kernel import Kernel
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion, OpenAIChatPromptExecutionSettings
 from semantic_kernel.functions import KernelArguments
 from semantic_kernel.connectors.ai.function_call_behavior import FunctionCallBehavior
-
 from plugins.CodePlugin.refactor.refactor import CodeRefactor
 from plugins.FinancePlugin.finance import FinancePlugin
 from semantic_kernel.planners import SequentialPlanner
+from dotenv import load_dotenv 
 
-
+load_dotenv()
 #Boilerplate
 kernel = Kernel()
-
 useAzureOpenAI = False
-ai_model_id="gpt-3.5-turbo"
+ai_model_id=os.environ['OPENAI_API_MODEL']
+open_ai_key=os.environ['OPENAI_API_KEY']
 service_id = "chat"
 execution_settings = OpenAIChatPromptExecutionSettings(
     service_id="chat"
@@ -23,7 +23,7 @@ execution_settings = OpenAIChatPromptExecutionSettings(
 
 # Configure AI service used by the kernel
 kernel.add_service(
-    OpenAIChatCompletion(service_id=service_id,ai_model_id=ai_model_id),
+    OpenAIChatCompletion(service_id=service_id,api_key=open_ai_key,ai_model_id=ai_model_id),
 )
 
 #Adding our defined plugins
@@ -51,7 +51,9 @@ async  def get_planner(planner,user_input:str):
     try:
         arguments = KernelArguments(settings=execution_settings)
         arguments["user_input"]= user_input
-        goal = f'Based on the user_input argument,chat with the AI to get the ticker_name and period if available, extract the data for a ticker over time, create a drawdown, plot the chart, refactor the code to include the drawdow data.'
+        goal = '''Based on the user_input argument,chat with the AI to get the ticker_name and period if available,
+            extract the data for a ticker over time, create a drawdown, plot the chart, refactor the code to include the drawdow data.
+            '''
         plan = await planner.create_plan(goal = goal)
         result = await plan.invoke(kernel=kernel, arguments=arguments)
 
