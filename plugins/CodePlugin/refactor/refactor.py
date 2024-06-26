@@ -26,5 +26,6 @@ class CodeRefactor:
         code = code.strip('```')
         code = code.replace('# df=TEMP_DATA', f'df = pd.read_json(StringIO(\'{data}\'), orient="split")')
         code = code.replace('TITLE',f'{ticker_name} stock over the period of {period}')
+        print('plotted data')
         return code
 

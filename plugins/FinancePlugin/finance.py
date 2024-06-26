@@ -25,6 +25,7 @@ class FinancePlugin:
             data = data.drop(columns=["Open","High","Low","Volume", "Dividends", "Stock Splits"])
             data.index = data.index.strftime('%Y-%m-%d')
             data["Close"] = data["Close"].round(4)
+            print('data retrieval complete')
             return data.to_json()
 
     @kernel_function(name="drawdown", description="Calculate the drawdown values for the stock")
@@ -35,4 +36,5 @@ class FinancePlugin:
         data['Drawdown'] = data['Close'] - data['Peak']
         data["Drawdown"] = data["Drawdown"].round(4)
         data = data.drop(columns=["Peak"])
+        print('drawdown calculated')
         return str(data.to_json(orient='split'))
