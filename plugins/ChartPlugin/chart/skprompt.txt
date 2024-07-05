@@ -9,11 +9,12 @@ Generate a new complete Python file that performs the following tasks:
 3. Convert the dataFrame index to a 'Date' column
 
 4. Use matplotlib to create a plot with:
-    * Display the closing value across the time period .
+    * Display the closing value and the drawdown value in a subplot across the time period .
     * X-axis showing dates with intelligent labeling (e.g., only show year for multi-year data, month for multi-month data).
     * Appropriate labels, and legend
+    * closing value line should be in blue 
+    * drawdown value line should be in red
     * the title should be the word TITLE in capitals
-    * there should be a separate subplot displaying the drawdown data over time in red 
     * there should be a gap between the chart for the plot and subplot
 
 5. Display Plot
