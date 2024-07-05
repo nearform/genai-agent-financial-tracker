@@ -13,8 +13,8 @@ This project creates a chat box that will give you up to date financial tracking
             pip install virtualenv` or `pip3 install virtualenv
             virtualenv my_env
             ```
-    - on mac: `source my_env/bin/activate`
-    - on windows: `.\env_name\Scripts\activate`
+    - on mac and linux: `source my_env/bin/activate`
+    - on windows: `.\my_env\Scripts\activate`
     2. install the requirements
             `pip install -r requirements.txt`
     3. Create a file `.env`
