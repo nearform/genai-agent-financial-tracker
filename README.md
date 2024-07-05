@@ -6,16 +6,21 @@ This project creates a chat box that will give you up to date financial tracking
 
 
 ## Requirements
-    1. install python : https://www.python.org/downloads/
-    2. [Optional] create a virtual environment: 
-        2.1 run the command: 
-            `pip install virtualenv` or `pip3 install virtualenv`
+1. install python : https://www.python.org/downloads/
+2. [Optional] create a virtual environment:
+    - run the commands: 
+        ```
+            pip install virtualenv` or `pip3 install virtualenv
+            virtualenv my_env
+            ```
+    - on mac: `source my_env/bin/activate`
+    - on windows: `.\env_name\Scripts\activate`
     2. install the requirements
             `pip install -r requirements.txt`
     3. Create a file `.env`
-        3.1 run the command: 
+        - run the command: 
              `cp .env.sample .env`
-        3.2 open the `.env` file and add your OpenAI api key: https://platform.openai.com/api-keys
+        - open the `.env` file and add your OpenAI api key: https://platform.openai.com/api-keys
         
 
 
