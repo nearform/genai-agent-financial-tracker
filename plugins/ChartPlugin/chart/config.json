@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "description": "From the data generate code that will map the data over a time period",
+  "execution_settings": {
+    "default": {
+      "max_tokens":4096,
+      "temperature": 0.1,
+      "stop_sequences": [
+        "[Done]"
+      ]
+    }
+  }
+}

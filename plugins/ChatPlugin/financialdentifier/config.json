@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "description": "From the text get the ticker name for the company and the period if available",
+  "execution_settings": {
+    "default": {
+      "max_tokens":4096,
+      "temperature": 0.1,
+      "stop_sequences": [
+        "[Done]"
+      ]
+    }
+  }
+}

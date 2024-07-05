@@ -1,0 +1,5 @@
+asyncio
+numpy
+pandas
+semantic_kernel
+matplotlib
